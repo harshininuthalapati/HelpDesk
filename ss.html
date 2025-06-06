@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cache.careers360.mobi/media/article_images/2021/7/18/Featured_Image_-_SRM_University_AP.jpg'), linear-gradient(to bottom right, #ffd700, #ff6f00);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        form {
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding-top: 30px;
+        }
+        #container {
+            max-width: 3000px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-left: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+        select, textarea {
+            width: 90%;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2{background-color: rgba(255, 255, 255, 0.9);margin-left: 10px;text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Complaints</h2>
+        <form action="submit_complaint.php" method="post">
+            <label>Complaint Type:</label>
+            <select name="complaint-type" onchange="updateSubTypeOptions()">
+                <option value="academic">Academic</option>
+                <option value="research">Research</option>
+                <option value="hostels">Hostels</option>
+            </select>
+            <label>Blocks</label>
+            <select name="sub-type">
+                <!-- Sub-type options will be generated dynamically -->
+            </select>
+            <label>Category:</label>
+            <select name="category">
+                <!-- Category options will be generated dynamically -->
+            </select>
+            <label>Room Number:</label>
+            <textarea name="description" rows="5"></textarea>
+            <label>Query:</label>
+            <textarea name="query" rows="5"></textarea>
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+    
+    <script>
+        function updateSubTypeOptions() {
+            const complaintTypeSelect = document.querySelector('select[name="complaint-type"]');
+            const subTypeSelect = document.querySelector('select[name="sub-type"]');
+            const categorySelect = document.querySelector('select[name="category"]');
+
+            // Clear the existing sub-type and category options
+            subTypeSelect.innerHTML = '';
+            categorySelect.innerHTML = '';
+
+            // Get the selected complaint type
+            const complaintType = complaintTypeSelect.value;
+
+            // Generate the sub-type options based on the selected complaint type
+            let subTypeOptions = '';
+            if (complaintType === 'academic') {
+                subTypeOptions = `
+                    <option value="W-block">W block</option>
+                    <option value="S-block">S block</option>
+                    <option value="C-block">C block</option>
+                `;
+            } else if (complaintType === 'research') {
+                subTypeOptions = `
+                    <option value="R-lab">Research Lab</option>
+                    <option value="X-lab">X Lab</option>
+                `;
+            } else if (complaintType === 'hostels') {
+                subTypeOptions = `
+                    <option value="Ganga">Ganga</option>
+                    <option value="Krishna">Krishna </option>
+                    <option value="vedavathi">vedavathi </option>
+                    <option value="Yamuna">Yamuna </option>
+                    <option value="Godavari">Godavari </option>
+                    <option value="Kaveri">Kaveri </option>
+                    <option value="Narmada">Narmada </option>
+                `;
+            }
+            subTypeSelect.innerHTML = subTypeOptions;
+
+            // Generate the category options based on the selected complaint type
+            let categoryOptions ='';
+            if (complaintType === 'academic') {
+                categoryOptions = `
+                    <option value="ClassRooms">Class Room</option>
+                    <option value="Lab">lab</option>
+                `;
+            } else if (complaintType === 'research') {
+            
+                categoryOptions = `
+                    <option value="Labs">Labs</option> `;
+            } else if (complaintType === 'hostels') {
+                categoryOptions = `
+                    <option value="room">Room</option>
+                    <option value="Common hall">Common Hall</option>
+                    <option value="mess">Mess</option>                `;
+            }
+            categorySelect.innerHTML = categoryOptions;
+        }
+
+        // Call the updateSubTypeOptions function initially to set the default sub-type and category options
+        updateSubTypeOptions();
+    </script>
+</body>
+</html>

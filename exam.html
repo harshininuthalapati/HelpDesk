@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let n=11
+       /* for(let x=n; x>=1; x--){
+            if(x%2==1)
+                document.write(x + " ")
+        }*/
+    //let x = 1
+       /*while(x<=n){
+        document.write(x++ + "<br/>")
+       }  */
+        /*do{
+            document.write(x++ + "<br/>")
+        }while(x <= n);  */
+
+
+        const names =["Chinnu", "Honey", "Rohi", "Bunny", "Saanki"]
+        /* for(let index = 0; index < names.length; index++){
+            document.write("Name: " + names[index].toUpperCase() + "<br/>")
+        }  */
+       /* for(let name in names){
+            document.write("Name: " + name.toLowerCase() + "<br/>")
+        }  */
+        /* for(let name of names){
+            document.write("Name: " + name.toLowerCase() + "<br/>")
+        }  */
+        /* names.forEach(function (name){
+            document.write("Name: " + name.toUpperCase() + "<br/>")    //It is called as anonymous function(a function without any name), It is only used in arrays
+        })      */
+       // int  = new java.util.Scanner(System.in).nextInt();   //anonymous object
+
+       // anonymous function using Arrow
+        /*  names.forEach((data) => document.write(data + "<br/>"))
+        let newnames = names.map((name) => name.toUpperCase())
+        newnames.forEach((data) => document.write(data + "<br/>"))  */
+
+        /* names.forEach(name => {
+            if(name.endsWith("nu"))
+            documnet.write(name)
+        }) */
+        const employees = [
+            {
+            id: 1,
+            firstName : "Sankitha",
+            lastName : "Varma",
+            gender: "Female",
+            Salary: 500000,
+            Address: {
+                street: "MG Road",
+                city: "Hyderabad"
+            }
+        },
+        {
+            id: 2,
+            firstName : "Pravyatha",
+            lastName : "Varma",
+            gender: "Female",
+            Salary: 100000,
+            Address: {
+                street: "GS Road",
+                city: "Chennai"
+            }
+        },
+        {
+            id: 3,
+            firstName : "Rohesh",
+            lastName : "Varma",
+            gender: "Male",
+            Salary: 300000,
+            Address: {
+                street: "Benz circle",
+                city: "vijaywada"
+            }
+        }
+    ]
+
+        //document.write(employee["lastName"])
+        let data = "<p style ='color:blue'>"
+        for(let employee of employees){
+            for(let x in employee){
+                if(employee[x] instanceof Object){
+                    for(let y in employee[x]){
+                        data += "<b>" + x + "<b/> : <span style='color:red'>" + x[y] + "</span><br/>"
+                     }
+                }
+                else{
+                    data += "<b>" + x + "</b> : <span style='color:red'>" + employee[x] + "</span><br/>"
+                }
+            //document.write(employee[x] + "<br/>")
+            }
+        }
+        data += "<p/>"
+        document.write(data)   
+
+        let jsontxt = '{"First Name":"vamsi","lastName":"sasidhar","age":10}'
+        const person=JSON.parse(jsontxt)
+
+        for(let key in person)
+        {
+            document.write(key + ":" +person[key]+"<br/>")
+        }
+        document.write(person)
+        let str= JSON.stringify(person)
+        document.write(str)
+    </script>
+</body>
+</html>

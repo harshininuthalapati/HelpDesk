@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cache.careers360.mobi/media/article_images/2021/7/18/Featured_Image_-_SRM_University_AP.jpg'), linear-gradient(to bottom right, #ffd700, #ff6f00);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        header {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 20px;
+            text-align: center; 
+            font-size: 36px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            animation: header-fadein 1s ease forwards;
+        }
+        nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            animation: nav-fadein 1s ease forwards;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            animation: container-fadein 1s ease forwards;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #ff9800;
+        }
+        .welcome-animation {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: welcome-fadein 1s ease forwards, welcome-slidein 1s ease forwards;
+        }
+        @keyframes welcome-fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes welcome-slidein {
+            from { transform: translateY(-50px); }
+            to { transform: translateY(0); }
+        }
+        @keyframes header-fadein {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes nav-fadein {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes container-fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        SRM UNIVERSITY AP
+    </header>
+    <nav>
+        <ul>
+            <li><a href="workforworker.php" id="complaints">Complaints</a></li>
+            <li><a href="workerprevcom.php" id="previous-complaints">Previous Complaints</a></li>
+        </ul>
+    </nav>
+    <div class="container" id="main-content">
+        <div class="welcome-animation">
+            <h2>Welcome to SRM University AP</h2>
+            <p>This is the worker portal where you can manage complaints and tasks assigned to you.</p>
+        </div>
+    </div>
+
+    <script>
+        // Upload profile pic removed
+        
+        // Other event listeners and functions can be added here as needed
+    </script>
+</body>
+</html>
