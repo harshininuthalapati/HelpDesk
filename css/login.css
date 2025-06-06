@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    position:fixed;}
+
+.image-container {
+    width: 50%;
+}       
+
+ .image {
+    display: block;
+    max-width: 40%;
+    height: 100%;
+    }           
+.header {            
+    background-color: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #000000b9;
+    width: 500px; /* adjust the width to your liking */
+    height: 200px; /* adjust the height to your liking */
+    background-color:white; /* optional background color */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .option {
+    display: inline-block;
+    width: 70px; /* adjust the width to your liking */
+    height: 70px; /* adjust the height to your liking */
+    border-radius: 55%;
+    background-color: #72a719b9; /* optional background color */
+    margin: 20px; /* adjust the margin to your liking */
+    text-align: center;
+    border-color: #548c00b9;
+    line-height: 60px; /* adjust the line height to your liking */
+    cursor: pointer; /* make the cursor a pointer on hover */
+  }
+  
+  .option:hover {
+    background-color: #ccc; /* optional hover effect */
+  }

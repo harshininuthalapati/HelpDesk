@@ -1,0 +1,16 @@
+table {
+  margin: 0 auto; /* center the table */
+  background-color: #fff; /* set the background color to white */
+  border: 1px solid #ccc; /* add a border to the table */
+  border-collapse: collapse; /* collapse the borders to avoid double borders */
+}
+
+th, td {
+  border: 1px solid #ccc; /* add a border to the table cells */
+  padding: 8px; /* add some padding to the table cells */
+  text-align: left; /* left-align the text in the table cells */
+}
+
+th {
+  background-color: #f2f2f2; /* add a light gray background color to the table headers */
+}
